@@ -1,14 +1,1692 @@
 {
-  "posts": [
-    { "id": 1, "title": "Post 1" },
-    { "id": 2, "title": "Post 2" },
-    { "id": 3, "title": "Post 3" }
+  "PAGES": [
+    {
+      "id": "POACK",
+      "data": [
+        {
+          "name": "Эликвис",
+          "id": "ELIQUIS",
+          "active": true
+        },
+        {
+          "name": "Прадакса",
+          "id": "PRADAXA",
+          "active": false
+        },
+        {
+          "name": "Ксарелто",
+          "id": "XARELTO",
+          "active": false
+        }
+      ]
+    },
+    {
+      "id": "ELIQUIS",
+      "data": [
+        {
+          "mass_type": "constructor",
+          "elements": {
+            "type": "select",
+            "id": "type",
+            "title": "Показание:",
+            "elements": [
+              {
+                "name": "Неклапанная фибриляция предсердий",
+                "id": "ELIQUIS_NVAF",
+                "active": true
+              },
+              {
+                "name": "Эндопротезирование сустава",
+                "id": "ELIQUIS_JOINT",
+                "active": false
+              },
+              {
+                "name": "ТГВ или ТЭЛА",
+                "id": "ELIQUIS_DVTPE",
+                "active": false
+              }
+            ]
+          }
+        },
+        {
+          "mass_type": "ELIQUIS_NVAF",
+          "elements": [
+            {
+              "type": "check",
+              "id": "check",
+              "title": "Если у пациента есть следующие характеристики:",
+              "elements": [
+                {
+                  "name": "Возраст 80 лет и более",
+                  "id": "ageOver80",
+                  "active": true
+                },
+                {
+                  "name": "Масса тела 60 кг и меньше",
+                  "id": "weightUnder60",
+                  "active": false
+                },
+                {
+                  "name": "Креатинин 133 мкмоль/л и более",
+                  "id": "highCreatinine",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "feature",
+              "title": "Особые характеристики:",
+              "elements": [
+                {
+                  "name": "Нет ничего из перечисленного",
+                  "id": "NONE",
+                  "active": true
+                },
+                {
+                  "name": "СКФ пациента менее 15 мл/мин или он находится на диализе",
+                  "id": "GFR_UNDER_15_OR_DIALYSIS",
+                  "active": false
+                },
+                {
+                  "name": "СКФ пациента 15-29 мл/мин",
+                  "id": "GFR_BETWEEN_15_AND_29",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "contraindications",
+              "id": "contraindications",
+              "title": "Противопоказания:",
+              "elements": [
+                {
+                  "name": "Есть",
+                  "id": true,
+                  "active": false
+                },
+                {
+                  "name": "Нет",
+                  "id": false,
+                  "active": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mass_type": "ELIQUIS_JOINT",
+          "elements": [
+            {
+              "type": "radio",
+              "id": "jointType",
+              "title": "Выберите сустав:",
+              "elements": [
+                {
+                  "name": "Тазобедренный",
+                  "id": "HIP",
+                  "active": true
+                },
+                {
+                  "name": "Коленный",
+                  "id": "KNEE",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "feature",
+              "title": "Особые характеристики:",
+              "elements": [
+                {
+                  "name": "Нет ничего из перечисленного",
+                  "id": "NONE",
+                  "active": true
+                },
+                {
+                  "name": "СКФ пациента менее 15 мл/мин или он находится на диализе",
+                  "id": "GFR_UNDER_15_OR_DIALYSIS",
+                  "active": false
+                },
+                {
+                  "name": "СКФ пациента 15-29 мл/мин",
+                  "id": "GFR_BETWEEN_15_AND_29",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "contraindications",
+              "id": "contraindications",
+              "title": "Противопоказания:",
+              "elements": [
+                {
+                  "name": "Есть",
+                  "id": true,
+                  "active": false
+                },
+                {
+                  "name": "Нет",
+                  "id": false,
+                  "active": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mass_type": "ELIQUIS_DVTPE",
+          "elements": [
+            {
+              "type": "radio",
+              "id": "period",
+              "title": "На каком периоде лечения находится пациент?",
+              "elements": [
+                {
+                  "name": "Первые 7 дней",
+                  "id": "FIRST_7_DAYS",
+                  "active": true
+                },
+                {
+                  "name": "Больше 7 дней, но меньше 6 месяцев",
+                  "id": "MORE_THAN_7_DAYS_BUT_LESS_THAN_6_MONTHS",
+                  "active": false
+                },
+                {
+                  "name": "Больше 6 месяцев",
+                  "id": "MORE_THAN_6_MONTHS ",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "feature",
+              "title": "Особые характеристики:",
+              "elements": [
+                {
+                  "name": "Нет ничего из перечисленного",
+                  "id": "NONE",
+                  "active": true
+                },
+                {
+                  "name": "СКФ пациента менее 15 мл/мин или он находится на диализе",
+                  "id": "GFR_UNDER_15_OR_DIALYSIS",
+                  "active": false
+                },
+                {
+                  "name": "СКФ пациента 15-29 мл/мин",
+                  "id": "GFR_BETWEEN_15_AND_29",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "contraindications",
+              "id": "contraindications",
+              "title": "Противопоказания:",
+              "elements": [
+                {
+                  "name": "Есть",
+                  "id": true,
+                  "active": false
+                },
+                {
+                  "name": "Нет",
+                  "id": false,
+                  "active": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRADAXA",
+      "data": [
+        {
+          "mass_type": "content",
+          "elements": [
+            {
+              "type": "select",
+              "id": "type",
+              "title": "Показание:",
+              "elements": [
+                {
+                  "name": "Неклапанная фибрилляция предсердий",
+                  "id": "PRADAXA_NVAF",
+                  "active": true
+                },
+                {
+                  "name": "ТГВ или ТЭЛА",
+                  "id": "PRADAXA_DVTPE",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "radio",
+              "id": "firstRiskFactors",
+              "title": "Если у пациента есть следующие характеристики:",
+              "dop_info_list": [
+                {
+                  "name": "Пациент старше 80 лет"
+                },
+                {
+                  "name": "Пациент получает лечение верапамилом, амиодароном, хинидином"
+                },
+                {
+                  "name": "HAS-BLED = 3"
+                }
+              ],
+              "elements": [
+                {
+                  "name": "Есть один или несколько факоров из перечисленных",
+                  "id": true,
+                  "active": true
+                },
+                {
+                  "name": "Нет этих факторов",
+                  "id": false,
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "radio",
+              "id": "secondRiskFactors",
+              "title": "Если у пациента есть следующие характеристики:",
+              "dop_info_list": [
+                {
+                  "name": "Пациенты 75-80 лет"
+                },
+                {
+                  "name": "Пациенты с умеренным нарушением функции почек (КК 30-50 мл/мин)"
+                },
+                {
+                  "name": "Пациенты с эзофагитом, гастритом или ГЭРБ"
+                },
+                {
+                  "name": "Другие пациенты с повышенным риском кровотечения"
+                }
+              ],
+              "elements": [
+                {
+                  "name": "Есть один или несколько факоров из перечисленных",
+                  "id": true,
+                  "active": true
+                },
+                {
+                  "name": "Нет этих факторов",
+                  "id": false,
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "contraindications",
+              "id": "contraindications",
+              "title": "Противопоказания:",
+              "elements": [
+                {
+                  "name": "Есть",
+                  "id": true,
+                  "active": false
+                },
+                {
+                  "name": "Нет",
+                  "id": false,
+                  "active": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "XARELTO",
+      "data": [
+        {
+          "mass_type": "constructor",
+          "elements": {
+            "type": "select",
+            "id": "type",
+            "title": "Показание:",
+            "elements": [
+              {
+                "name": "Неклапанная фибрилляция предсердий",
+                "id": "XARELTO_NVAF",
+                "active": true
+              },
+              {
+                "name": "ТГВ или ТЭЛА",
+                "id": "XARELTO_DVTPE",
+                "active": false
+              }
+            ]
+          }
+        },
+        {
+          "mass_type": "XARELTO_NVAF",
+          "elements": [
+            {
+              "type": "radio",
+              "id": "hepaticCoagulopathy",
+              "title": "Заболевание печени с коагулопатией:",
+              "elements": [
+                {
+                  "name": "Есть",
+                  "id": true,
+                  "active": true
+                },
+                {
+                  "name": "Нет",
+                  "id": false,
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "gfr",
+              "title": "СКФ:",
+              "elements": [
+                {
+                  "name": "менее 15 мл/мин",
+                  "id": "GFR_UNDER_15",
+                  "active": true
+                },
+                {
+                  "name": "15-29 мл/мин",
+                  "id": "GFR_BETWEEN_15_AND_29",
+                  "active": false
+                },
+                {
+                  "name": "30-49 мл/мин",
+                  "id": "GFR_BETWEEN_30_AND_49",
+                  "active": false
+                },
+                {
+                  "name": "от 50 мл/мин и выше",
+                  "id": "GFR_50_AND_ABOVE",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "contraindications",
+              "id": "contraindications",
+              "title": "Противопоказания:",
+              "elements": [
+                {
+                  "name": "Есть",
+                  "id": true,
+                  "active": false
+                },
+                {
+                  "name": "Нет",
+                  "id": false,
+                  "active": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mass_type": "XARELTO_DVTPE",
+          "elements": [
+            {
+              "type": "radio",
+              "id": "period",
+              "title": "Период применения:",
+              "elements": [
+                {
+                  "name": "0т 1-го до 21-го дня",
+                  "id": "FROM_DAY_1_TO_DAY_21",
+                  "active": true
+                },
+                {
+                  "name": "После 22-го дня",
+                  "id": "AFTER_DAY_22",
+                  "active": false
+                },
+                {
+                  "name": "После как минимум 6 месяцев лечения ТГВ и ТЭЛА",
+                  "id": "AFTER_6_MONTH",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "gfr",
+              "title": "СКФ:",
+              "elements": [
+                {
+                  "name": "от 15 мл/мин и выше",
+                  "id": "GFR_15_AND_MORE",
+                  "active": true
+                },
+                {
+                  "name": "менее 15 мл/мин",
+                  "id": "GFR_LESS_THAN_15",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "contraindications",
+              "id": "contraindications",
+              "title": "Противопоказания:",
+              "elements": [
+                {
+                  "name": "Есть",
+                  "id": true,
+                  "active": false
+                },
+                {
+                  "name": "Нет",
+                  "id": false,
+                  "active": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CKD-EPI",
+      "data": [
+        {
+          "mass_type": "content",
+          "elements": [
+            {
+              "type": "radio",
+              "id": "CKD-EPI_block1",
+              "title": "Пол",
+              "elements": [
+                {
+                  "name": "Женский",
+                  "id": "ZHENSKIY",
+                  "active": true
+                },
+                {
+                  "name": "Мужской",
+                  "id": "MUZHSKOY",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "input",
+              "id": "CKD-EPI_block2",
+              "title": "Возраст",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "полных лет"
+            },
+            {
+              "type": "input",
+              "id": "CKD-EPI_block3",
+              "title": "Креатинин плазмы",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "мкмоль/л"
+            },
+            {
+              "type": "check",
+              "id": "CKD-EPI_block4",
+              "title": "Особые характеристики",
+              "elements": [
+                {
+                  "name": "Негроидная раса",
+                  "id": "NEGROIDNAYA_RASA",
+                  "active": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "KOKROFTA-GOLTA",
+      "data": [
+        {
+          "mass_type": "content",
+          "elements": [
+            {
+              "type": "radio",
+              "id": "KOKROFTA-GOLTA_block1",
+              "title": "Пол",
+              "elements": [
+                {
+                  "name": "Женский",
+                  "id": "ZHENSKIY",
+                  "active": true
+                },
+                {
+                  "name": "Мужской",
+                  "id": "MUZHSKOY",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "input",
+              "id": "KOKROFTA-GOLTA_block2",
+              "title": "Возраст",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "полных лет"
+            },
+            {
+              "type": "input",
+              "id": "KOKROFTA-GOLTA_block3",
+              "title": "Вес",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "кг"
+            },
+            {
+              "type": "input",
+              "id": "KOKROFTA-GOLTA_block4",
+              "title": "Креатинин плазмы",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "мкмоль/л"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MDRD",
+      "data": [
+        {
+          "mass_type": "content",
+          "elements": [
+            {
+              "type": "radio",
+              "id": "MDRD_block1",
+              "title": "Пол",
+              "elements": [
+                {
+                  "name": "Женский",
+                  "id": "ZHENSKIY",
+                  "active": true
+                },
+                {
+                  "name": "Мужской",
+                  "id": "MUZHSKOY",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "input",
+              "id": "MDRD_block2",
+              "title": "Возраст",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "полных лет"
+            },
+            {
+              "type": "input",
+              "id": "MDRD_block3",
+              "title": "Креатинин плазмы",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "мкмоль/л"
+            },
+            {
+              "type": "check",
+              "id": "MDRD_block4",
+              "title": "Особые характеристики",
+              "elements": [
+                {
+                  "name": "Негроидная раса",
+                  "id": "NEGROIDNAYA_RASA",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "id": "MDRD_block5",
+              "title": "Методы в лаборатории",
+              "elements": [
+                {
+                  "name": "В лаборатории используется метод дилюционной изотоп-масс-спектрометрии, для определения креатинина в крови",
+                  "id": "METODS",
+                  "active": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DETYAM",
+      "data": [
+        {
+          "mass_type": "content",
+          "elements": [
+            {
+              "type": "select",
+              "id": "DETYAM_block1",
+              "title": "Возраст ребёнка",
+              "elements": [
+                {
+                  "name": "меньше года",
+                  "id": "MENSHE_GODA",
+                  "active": true
+                },
+                {
+                  "name": "от 1 до 2 лет",
+                  "id": "OT_1_DO_2_LET",
+                  "active": false
+                },
+                {
+                  "name": "от 2 до 12 лет",
+                  "id": "OT_2_DO_12_LET",
+                  "active": false
+                },
+                {
+                  "name": "от 13 до 21 года девочка",
+                  "id": "OT_13_DO_21_GODA_DEVOCHKA",
+                  "active": false
+                },
+                {
+                  "name": "от 13 до 21 года мальчик",
+                  "id": "OT_13_DO_21_GODA_MALCHIK",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "input",
+              "id": "DETYAM_block2",
+              "title": "Рост",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "см"
+            },
+            {
+              "type": "input",
+              "id": "DETYAM_block3",
+              "title": "Креатинин плазмы",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "мкмоль/л"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SKF",
+      "data": [
+        {
+          "name": "CKD-EPI",
+          "id": "CKD-EPI",
+          "active": true
+        },
+        {
+          "name": "Кокрофта-Голта",
+          "id": "KOKROFTA-GOLTA",
+          "active": false
+        },
+        {
+          "name": "MDRD",
+          "id": "MDRD",
+          "active": false
+        },
+        {
+          "name": "Детям",
+          "id": "DETYAM",
+          "active": false
+        }
+      ]
+    },
+    {
+      "id": "NSAID_DICLOFENAC",
+      "data": [
+        {
+          "mass_type": "content",
+          "elements": [
+            {
+              "type": "radio",
+              "id": "clearance",
+              "title": "Клиренс креатинина (по формуле Кокрофта-Голта)",
+              "elements": [
+                {
+                  "name": "30 мл/мин и больше",
+                  "id": "CLEARANCE_30_AND_MORE",
+                  "active": true
+                },
+                {
+                  "name": "менее 30 мл/мин",
+                  "id": "CLEARANCE_UNDER_30",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "applicationMethod",
+              "modal": true,
+              "title": "Способ применения",
+              "elements": [
+                {
+                  "name": "системно",
+                  "id": "SYSTEMICALLY",
+                  "active": true
+                },
+                {
+                  "name": "местно",
+                  "id": "LOCALLY",
+                  "active": false
+                },
+                {
+                  "name": "и местно, и системно",
+                  "id": "BOTH",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "input",
+              "id": "age",
+              "title": "Возраст пациента\n\n",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "полных лет"
+            },
+            {
+              "type": "contraindications",
+              "id": "contraindications",
+              "title": "Список противопоказаний",
+              "elements": [
+                {
+                  "name": "Есть противопоказания",
+                  "id": true,
+                  "active": false
+                },
+                {
+                  "name": "Нет противопоказаний",
+                  "id": false,
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "грамм"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NSAID_MELOXICAM",
+      "data": [
+        {
+          "mass_type": "content",
+          "elements": [
+            {
+              "type": "radio",
+              "id": "clearance",
+              "title": "Клиренс креатинина (по формуле Кокрофта-Голта)",
+              "elements": [
+                {
+                  "name": "61 мл/мин и больше",
+                  "id": "CLEARANCE_61_AND_MORE",
+                  "active": true
+                },
+                {
+                  "name": "30-60 мл/мин",
+                  "id": "CLEARANCE_BETWEEN_30_AND_60",
+                  "active": false
+                },
+                {
+                  "name": "29 мл/мин и менее",
+                  "id": "CLEARANCE_29_AND_LESS",
+                  "active": false
+                },
+                {
+                  "name": "пациент на диализе",
+                  "id": "DIALYSIS",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "applicationMethod",
+              "title": "Способ применения",
+              "elements": [
+                {
+                  "name": "системно",
+                  "id": "SYSTEMICALLY",
+                  "active": true
+                },
+                {
+                  "name": "местно",
+                  "id": "LOCALLY",
+                  "active": false
+                },
+                {
+                  "name": "и местно, и системно",
+                  "id": "BOTH",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "radio",
+              "id": "hyperkalemia",
+              "title": "Гиперкалиемия по данным вашей лаборатории",
+              "elements": [
+                {
+                  "name": "да",
+                  "id": true,
+                  "active": true
+                },
+                {
+                  "name": "нет",
+                  "id": false,
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "radio",
+              "id": "pemetrexed",
+              "title": "Пациент принимает Алимту (пеметрексед)\n\n",
+              "elements": [
+                {
+                  "name": "да",
+                  "id": true,
+                  "active": true
+                },
+                {
+                  "name": "нет",
+                  "id": false,
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "input",
+              "id": "age",
+              "title": "Возраст пациента\n\n",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "полных лет"
+            },
+            {
+              "type": "contraindications",
+              "id": "contraindications",
+              "title": "Список противопоказаний",
+              "elements": [
+                {
+                  "name": "Есть противопоказания",
+                  "id": true,
+                  "active": false
+                },
+                {
+                  "name": "Нет противопоказаний",
+                  "id": false,
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "грамм"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NSAID_CELECOXIB",
+      "data": [
+        {
+          "mass_type": "content",
+          "elements": [
+            {
+              "type": "input",
+              "id": "age",
+              "title": "Возраст пациента",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "полных лет"
+            },
+            {
+              "type": "input",
+              "id": "gfr",
+              "title": "СКФ",
+              "elements": [
+                {
+                  "name": "",
+                  "id": "",
+                  "active": true
+                },
+                {
+                  "name": "",
+                  "id": "",
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "мкмоль/л"
+            },
+            {
+              "type": "select",
+              "id": "drugType",
+              "title": "Пациент принимает ЛС, влияющие на гемостаз?",
+              "elements": [
+                {
+                  "name": "нет",
+                  "id": "NONE",
+                  "active": false
+                },
+                {
+                  "name": "да, аспирин в низких дозах\n",
+                  "id": "ASPIRIN",
+                  "active": true
+                },
+                {
+                  "name": "другие антиагреганты",
+                  "id": "OTHER_ANTIPLATELET_AGENTS",
+                  "active": false
+                },
+                {
+                  "name": "антикоагулянты отдельно или в комбинации с антиагрегантами",
+                  "id": "ANTICOAGULANTS",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "check",
+              "id": "heartDiseases",
+              "title": "Болезни ССС из перечисленных",
+              "elements": [
+                {
+                  "name": "ХСН II-IV ФК по NYHA",
+                  "id": "CHRONIC_HEART_FAILURE",
+                  "active": true
+                },
+                {
+                  "name": "клинически выраженная ИБС",
+                  "id": "CARDIAC_ISCHEMIA",
+                  "active": false
+                },
+                {
+                  "name": "состояние после АКШ",
+                  "id": "STATE_AFTER_CORONARY_ARTERY_BYPASS_GRAFTING",
+                  "active": false
+                },
+                {
+                  "name": "нет состояний из перечисленных",
+                  "id": "NONE",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "radio",
+              "id": "liverDysfunction",
+              "title": "Нарушения функции печени",
+              "elements": [
+                {
+                  "name": "нет",
+                  "id": "NONE",
+                  "active": true
+                },
+                {
+                  "name": "класс А-В по Чайлд-Пью\n",
+                  "id": "CLASS_A_B",
+                  "active": false
+                },
+                {
+                  "name": "класс C по Чайлд-Пью\n",
+                  "id": "CLASS_C",
+                  "active": false
+                }
+              ]
+            },
+            {
+              "type": "contraindications",
+              "id": "contraindications",
+              "title": "Список противопоказаний",
+              "elements": [
+                {
+                  "name": "Есть противопоказания",
+                  "id": true,
+                  "active": false
+                },
+                {
+                  "name": "Нет противопоказаний",
+                  "id": false,
+                  "active": false
+                }
+              ],
+              "value": "",
+              "measure": "грамм"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NPVS",
+      "data": [
+        {
+          "name": "Диклофенак",
+          "id": "NSAID_DICLOFENAC",
+          "active": true
+        },
+        {
+          "name": "Мелоксикам",
+          "id": "NSAID_MELOXICAM",
+          "active": false
+        },
+        {
+          "name": "Целекоксиб",
+          "id": "NSAID_CELECOXIB",
+          "active": false
+        }
+      ]
+    }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 },
-    { "id": 2, "body": "some comment", "postId": 1 }
+  "MENU": [
+    {
+      "category": "Кровь",
+      "title": "Эликвис",
+      "subtitle": "Больше не надо лезть в Vidal и РЛС",
+      "id": "ELIQUIS",
+      "active": true
+    },
+    {
+      "category": "Кровь",
+      "title": "Прадакса",
+      "subtitle": "Больше не надо лезть в Vidal и РЛС",
+      "id": "PRADAXA",
+      "active": true
+    },
+    {
+      "category": "Кровь",
+      "title": "Ксарелто",
+      "subtitle": "Больше не надо лезть в Vidal и РЛС",
+      "id": "XARELTO",
+      "active": true
+    },
+    {
+      "category": "Кровь",
+      "title": "ПОАК",
+      "subtitle": "Больше не надо лезть в Vidal и РЛС",
+      "id": "POACK",
+      "active": true
+    },
+    {
+      "category": "Анализы",
+      "id": "SKF",
+      "title": "СКФ",
+      "subtitle": "считаем СКФ для точного дозирования",
+      "active": true
+    },
+    {
+      "category": "Анализы",
+      "id": "CKD-EPI",
+      "title": "CKD-EPI",
+      "subtitle": "считаем СКФ для точного дозирования",
+      "active": true
+    },
+    {
+      "category": "Анализы",
+      "id": "KOKROFTA-GOLTA",
+      "title": "Кокрофта-Голта",
+      "subtitle": "считаем СКФ для точного дозирования",
+      "active": true
+    },
+    {
+      "category": "Анализы",
+      "id": "MDRD",
+      "title": "MDRD",
+      "subtitle": "считаем СКФ для точного дозирования",
+      "active": true
+    },
+    {
+      "category": "Анализы",
+      "id": "DETYAM",
+      "title": "Детям",
+      "subtitle": "считаем СКФ для точного дозирования",
+      "active": true
+    },
+    {
+      "category": "Боль",
+      "id": "NPVS",
+      "title": "НПВС",
+      "subtitle": "Важные детали дозирования НПВС при боли в спине",
+      "active": true
+    },
+    {
+      "category": "Боль",
+      "id": "NSAID_DICLOFENAC",
+      "title": "Диклофенак",
+      "subtitle": "Больше не надо лезть в Vidal и РЛС",
+      "active": true
+    },
+    {
+      "category": "Боль",
+      "id": "NSAID_MELOXICAM",
+      "title": "Мелоксикам",
+      "subtitle": "Больше не надо лезть в Vidal и РЛС",
+      "active": true
+    },
+    {
+      "category": "Боль",
+      "id": "NSAID_CELECOXIB",
+      "title": "Целекоксиб",
+      "subtitle": "Больше не надо лезть в Vidal и РЛС",
+      "active": true
+    }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "CONTRAINDICATIONS": [
+    {
+      "title": "Основные противопоказания",
+      "subtitle": "",
+      "id": "ELIQUIS",
+      "items": [
+        {
+          "item": "повышенная чувствительность к апиксабану или любому компоненту препарата"
+        },
+        {
+          "item": "Активное клинически значимое кровотечение"
+        },
+        {
+          "item": "Заболевания печени, сопровождающиеся нарушениями в системе свертывания крови и клинически значимым риском развития кровотечений"
+        },
+        {
+          "item": "Заболевания или состояния, характеризующиеся значимым риском большого кровотечения"
+        },
+        {
+          "item": "Существующее в настоящее время или недавнее обострение язвенной болезни ЖКТ"
+        },
+        {
+          "item": "Наличие злокачественного новообразования с высоким риском кровотечения"
+        },
+        {
+          "item": "Недавнее повреждение головного или спинного мозга"
+        },
+        {
+          "item": "Недавно перенесенное оперативное вмешательство на головном или спинном мозге, а также на органе зрения"
+        },
+        {
+          "item": "Недавно перенесенный геморрагический инсульт"
+        },
+        {
+          "item": "Установленное или подозреваемое варикозное расширение вен пищевода"
+        },
+        {
+          "item": "Артериовенозная мальформация"
+        },
+        {
+          "item": "Аневризма сосудов или выраженные внутриспинальные или внутримозговые изменения сосудов"
+        },
+        {
+          "item": "Нарушение функции почек с КК менее 15 мл/мин, а также применение у пациентов, находящихся на диализе"
+        },
+        {
+          "item": "Возраст до 18 лет (данные о применении препарата отсутствуют)"
+        },
+        {
+          "item": "Беременность (данные о применении препарата отсутствуют)"
+        },
+        {
+          "item": "Период грудного вскармливания (данные о применении препарата отсутствуют)"
+        },
+        {
+          "item": "Одновременное применение с любыми другими антикоагулянтными препаратами, включая нефракционированный гепарин (НФГ), низкомолекулярные гепарины (НМГ) (в т.ч. эноксапарин, далтепарин), производные гепарина (в т.ч. фондапаринукс), пероральные антикоагулянты (в т.ч. варфарин, ривароксабан, дабигатран), за исключением тех ситуаций, когда пациент переводится на терапию или с терапии апиксабаном или если нефракционированный гепарин назначается в дозах, необходимых для поддержания проходимости центрального венозного или артериального катетера, или когда нефракционированный гепарин применяется при катетерной аблации фибрилляции предсердий"
+        },
+        {
+          "item": "Врожденный дефицит лактозы, непереносимость лактозы, глюкозо-галактозная мальабсорбция"
+        }
+      ]
+    },
+    {
+      "title": "Основные противопоказания",
+      "subtitle": "",
+      "id": "PRADAXA",
+      "items": [
+        {
+          "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+        },
+        {
+          "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+        },
+        {
+          "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+        }
+      ]
+    },
+    {
+      "title": "Основные противопоказания",
+      "subtitle": "",
+      "id": "XARELTO",
+      "items": [
+        {
+          "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+        },
+        {
+          "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+        },
+        {
+          "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата",
+          "subitems": [
+            {
+              "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+            },
+            {
+              "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+            },
+            {
+              "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Противопоказания:",
+      "subtitle": "",
+      "id": "NSAID_DICLOFENAC",
+      "items": [
+        {
+          "item": "Период грудного вскармливания, III триместр беременности\n"
+        },
+        {
+          "item": "Повышенная чувствительность к диклофенаку и вспомогательным веществам используемого препарата\n"
+        },
+        {
+          "item": "«аспириновая триада» (приступы бронхиальной астмы, крапивницы и острого ринита при приеме ацетилсалициловой кислоты или других НПВС)"
+        },
+        {
+          "item": "эрозивно-язвенные поражения ЖКТ в фазе обострения"
+        },
+        {
+          "item": "тяжелая почечная недостаточность (КК меньше 30 мл/мин), прогрессирующее заболевание почек; тяжелая печеночная недостаточность, активное заболевание печени"
+        },
+        {
+          "item": "клинически подтвержденная ИБС, заболевания периферических артерий и сосудов головного мозга, неконтролируемая артериальная гипертензия, декомпенсированная сердечная недостаточность"
+        },
+        {
+          "item": "цереброваскулярные кровотечения\n"
+        },
+        {
+          "item": "нарушения гемостаза\n"
+        },
+        {
+          "item": "ранний послеоперационный период после аортокоронарного шунтирования\n"
+        },
+        {
+          "item": "подтвержденная гиперкалиемия\n"
+        },
+        {
+          "item": "грудное вскармливание\n"
+        },
+        {
+          "item": "детский и подростковый возраст до 18 лет.\n"
+        }
+      ]
+    },
+
+    {
+      "title": "Противопоказания:",
+      "subtitle": "",
+      "id": "NSAID_CELECOXIB",
+      "items": [
+        {
+          "item": "Повышенная чувствительность к целекоксибу или любому другому компоненту препарата"
+        },
+        {
+          "item": "Известная повышенная чувствительность к сульфонамидам"
+        },
+        {
+          "item": "Бронхиальная астма, крапивница или аллергические реакции после приема ацетилсалициловой кислоты или других НПВС, включая другие ингибиторы ЦОГ-2"
+        },
+        {
+          "item": "Состояние после операции аортокоронарного шунтирования"
+        },
+        {
+          "item": "Пептическая язва в стадии обострения или желудочно-кишечное кровотечение"
+        },
+        {
+          "item": "Воспалительные заболевания кишечника"
+        },
+        {
+          "item": "Сердечная недостаточность (nyha ii–iv)"
+        },
+        {
+          "item": "Клинически подтвержденная ишемическая болезнь сердца, заболевания периферических артерий и цереброваскулярные заболевания в выраженной стадии"
+        },
+        {
+          "item": "Тяжелая печеночная и почечная недостаточность (нет опыта применения)"
+        },
+        {
+          "item": "Беременность и период лактации (см. «применение при беременности и кормлении грудью»)"
+        },
+        {
+          "item": "Возраст до 18 лет (нет опыта применения)"
+        }
+      ]
+    },
+    {
+      "title": "Противопоказания:",
+      "subtitle": "",
+      "id": "NSAID_MELOXICAM",
+      "items": [
+        {
+          "item": "Эрозивно-язвенные поражения желудка и двенадцатиперстной кишки в стадии обострения или недавно перенесенные"
+        },
+        {
+          "item": "Воспалительные заболевания кишечника (болезнь Крона или язвенный колит в стадии обострения)"
+        },
+        {
+          "item": "Тяжелая печеночная и сердечная недостаточность"
+        },
+        {
+          "item": "Тяжелая почечная недостаточность (если не проводится гемодиализ, КК менее 30 мл/мин, а также при подтвержденной гиперкалиемии)"
+        },
+        {
+          "item": "Активное заболевание печени\n"
+        },
+        {
+          "item": "Активное желудочно-кишечное кровотечение, недавно перенесенные цереброваскулярные кровотечения или установленный диагноз заболеваний свертывающей системы крови"
+        },
+        {
+          "item": "Сопутствующая терапия антикоагулянтами, т.к. есть риск образования внутримышечных гематом"
+        },
+        {
+          "item": "Терапия периоперационных болей при проведении шунтирования коронарных артерий"
+        },
+        {
+          "item": "Беременность"
+        },
+        {
+          "item": "Период лактации (грудного вскармливания)"
+        },
+        {
+          "item": "Возраст до 18 лет"
+        },
+        {
+          "item": "Гиперчувствительность (в т.ч. к другим НПВП), полное или неполное сочетание бронхиальной астмы, рецидивирующего полипоза носа или околоносовых пазух, ангионевротического отека или крапивницы, вызванных непереносимостью ацетилсалициловой кислоты или других НПВП из-за существующей вероятности перекрестной чувствительности (в т.ч. в анамнезе)"
+        }
+      ]
+    }
+  ],
+  "MODAL": [
+    {
+      "id": "NSAID_DICLOFENAC",
+      "data": [
+        {
+          "open": false,
+          "id": "with_attantion",
+          "title": "С осторожностью",
+          "subtitle": "",
+          "img-link": "",
+          "items": [
+            {
+              "item": "повышенная чувствительность к апиксабану или любому компоненту препарата",
+              "subitems": [
+                {
+                  "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+                },
+                {
+                  "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+                },
+                {
+                  "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+                }
+              ]
+            },
+            {
+              "item": "Активное клинически значимое кровотечение"
+            },
+            {
+              "item": "Заболевания печени, сопровождающиеся нарушениями в системе свертывания крови и клинически значимым риском развития кровотечений"
+            }
+          ]
+        },
+        {
+          "open": false,
+          "id": "pregnets__or__feeding_mother",
+          "title": "Применение при беременности и кормлении грудью",
+          "img-link": "",
+          "items": [
+            {
+              "item": "повышенная чувствительность к апиксабану или любому компоненту препарата",
+              "subitems": [
+                {
+                  "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+                },
+                {
+                  "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+                },
+                {
+                  "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+                }
+              ]
+            },
+            {
+              "item": "Активное клинически значимое кровотечение"
+            },
+            {
+              "item": "Заболевания печени, сопровождающиеся нарушениями в системе свертывания крови и клинически значимым риском развития кровотечений"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NSAID_MELOXICAM",
+      "data": [
+        {
+          "open": false,
+          "id": "with_attantion",
+          "title": "С осторожностью",
+          "subtitle": "",
+          "img-link": "",
+          "items": [
+            {
+              "item": "повышенная чувствительность к апиксабану или любому компоненту препарата",
+              "subitems": [
+                {
+                  "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+                },
+                {
+                  "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+                },
+                {
+                  "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+                }
+              ]
+            },
+            {
+              "item": "Активное клинически значимое кровотечение"
+            },
+            {
+              "item": "Заболевания печени, сопровождающиеся нарушениями в системе свертывания крови и клинически значимым риском развития кровотечений"
+            }
+          ]
+        },
+        {
+          "open": false,
+          "id": "pregnets__or__feeding_mother",
+          "title": "Применение при беременности и кормлении грудью",
+          "img-link": "",
+          "items": [
+            {
+              "item": "повышенная чувствительность к апиксабану или любому компоненту препарата",
+              "subitems": [
+                {
+                  "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+                },
+                {
+                  "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+                },
+                {
+                  "item": "Повышенная чувствительность к апиксабану или любому компоненту препарата"
+                }
+              ]
+            },
+            {
+              "item": "Активное клинически значимое кровотечение"
+            },
+            {
+              "item": "Заболевания печени, сопровождающиеся нарушениями в системе свертывания крови и клинически значимым риском развития кровотечений"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
+
